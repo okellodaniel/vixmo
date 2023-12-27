@@ -1,12 +1,27 @@
-import { StyleSheet } from "react-native";
+import { ImageStyle, TextStyle, ViewStyle } from "react-native";
 
-import { COLORS, FONT, SIZES } from "@/constants/theme";
+import { COLORS, FONT, SIZES } from "../../../constants/theme";
 
-const styles = StyleSheet.create({
+interface StyleProps {
+    container: ViewStyle,
+    headerMessage: TextStyle,
+    welcomeMessage: TextStyle,
+    searchContainer: ViewStyle,
+    searchWrapper: ViewStyle,
+    searchInput: TextStyle,
+    searchBtn: ViewStyle,
+    searchBtnImage: ImageStyle,
+    tabsContainer: ViewStyle,
+    tab: (activeHomeType: string, item: String) => ViewStyle;
+    tabText: (activeHomeType: string, item: String) => TextStyle;
+
+}
+
+const styles: StyleProps = {
     container: {
         width: "100%",
     },
-    userName: {
+    headerMessage: {
         fontFamily: FONT.regular,
         fontSize: SIZES.large,
         color: COLORS.secondary,
@@ -61,12 +76,12 @@ const styles = StyleSheet.create({
         paddingHorizontal: SIZES.small,
         borderRadius: SIZES.medium,
         borderWidth: 1,
-        borderColor: activeHomeType === item ? COLORS.secondary : COLORS.gray2,
+        borderColor: activeHomeType === item ? COLORS.secondary : COLORS.primary,
     }),
     tabText: (activeHomeType, item) => ({
         fontFamily: FONT.medium,
-        color: activeHomeType === item ? COLORS.secondary : COLORS.gray2,
+        color: activeHomeType === item ? COLORS.secondary : COLORS.primary,
     }),
-});
+};
 
 export default styles;
