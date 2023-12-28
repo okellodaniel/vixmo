@@ -1,9 +1,9 @@
 import { View, Text } from "react-native";
-import styles from "./home-screen.style";
+import styles from "./homeView.style";
 
 const HomeTypes = ["Condos", "Apartments", "Home"]
 
-const HomeScreen = () => {
+const homeView = () => {
     return (
         <View>
             <View style={styles.container}>
@@ -18,4 +18,4 @@ const HomeScreen = () => {
     );
 }
 
-export default HomeScreen;
+export default homeView;
